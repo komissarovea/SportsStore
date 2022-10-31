@@ -6,9 +6,10 @@ namespace SportsStore.Models
     {
         public StoreDbContext(DbContextOptions<StoreDbContext> options)
             : base(options) { 
-                System.Console.WriteLine("StoreDbContext ctor");
+                // System.Console.WriteLine("StoreDbContext ctor");
             }
 
             public DbSet<Product> Products => Set<Product>();
+            public DbSet<Order> Orders => Set<Order>();
     }
 }

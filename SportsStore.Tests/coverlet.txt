@@ -1,0 +1,9 @@
+﻿https://learn.microsoft.com/ru-ru/dotnet/core/testing/unit-testing-code-coverage?tabs=windows
+
+dotnet test --collect:"XPlat Code Coverage"
+
+dotnet add package coverlet.msbuild
+dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
+
+dotnet tool install -g dotnet-reportgenerator-globaltool
+reportgenerator -reports:"coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
